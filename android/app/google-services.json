@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "717837204692",
+    "firebase_url": "https://askly-de21f.firebaseio.com",
+    "project_id": "askly-de21f",
+    "storage_bucket": "askly-de21f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:717837204692:android:1fecc0819c186aa9e8cf41",
+        "android_client_info": {
+          "package_name": "com.example.askly"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "717837204692-6fjl1et6139ccks1u7jq24fcceuagqdf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUC6qJML1ccCrh7gsFPljsRv2vAtR9zjA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "717837204692-6fjl1et6139ccks1u7jq24fcceuagqdf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
