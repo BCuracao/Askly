@@ -33,11 +33,11 @@ class LoginScreenState extends State<LoginScreen> {
           return 'Enter a Valid Email Address';
         }
       },
-      decoration: InputDecoration(
+      decoration: const InputDecoration(
         hintText: 'Email',
         contentPadding:
-            const EdgeInsets.only(left: 15.0, right: 15.0, top: 30, bottom: 0),
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+            EdgeInsets.only(left: 15.0, right: 15.0, top: 30, bottom: 20),
+        border: OutlineInputBorder(),
       ),
     );
 
@@ -57,8 +57,8 @@ class LoginScreenState extends State<LoginScreen> {
       decoration: InputDecoration(
         hintText: 'Password',
         contentPadding:
-            const EdgeInsets.only(left: 15.0, right: 15.0, top: 15, bottom: 40),
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+            const EdgeInsets.only(left: 15.0, right: 15.0, top: 15, bottom: 35),
+        border: const OutlineInputBorder(),
         suffixIcon: IconButton(
           icon: Icon(_obscureText ? Icons.visibility : Icons.visibility_off),
           onPressed: () {
@@ -77,10 +77,30 @@ class LoginScreenState extends State<LoginScreen> {
       child: const Text('New? Register Here'),
     );
 
+    /* Kept just for reference values
+    ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          foregroundColor: Colors.white,
+                          backgroundColor:
+                              const Color.fromARGB(255, 0, 255, 255),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(32.0),
+                          ),
+                        ),
+                        onPressed: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (_) => HomeScreen()));
+                        },
+                        child: const Text(
+                          'Login',
+                          style: TextStyle(color: Colors.white, fontSize: 25),
+                        ),
+                      ),
+    */
     final loginAnonymousButton = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(30.0),
-      color: Theme.of(context).primaryColor,
+      color: const Color.fromARGB(255, 0, 255, 255),
       child: MaterialButton(
         minWidth: MediaQuery.of(context).size.width,
         padding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
@@ -167,28 +187,17 @@ class LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                     ),
-                    const Padding(
-                      padding: EdgeInsets.only(
+                    Padding(
+                      padding: const EdgeInsets.only(
                           left: 15.0, right: 15.0, top: 30, bottom: 0),
                       //padding: EdgeInsets.symmetric(horizontal: 15),
-                      child: TextField(
-                        decoration: InputDecoration(
-                            border: OutlineInputBorder(),
-                            labelText: 'Email',
-                            hintText: 'Enter valid email id as abc@gmail.com'),
-                      ),
+                      child: emailField,
                     ),
-                    const Padding(
-                      padding: EdgeInsets.only(
+                    Padding(
+                      padding: const EdgeInsets.only(
                           left: 15.0, right: 15.0, top: 15, bottom: 40),
                       //padding: EdgeInsets.symmetric(horizontal: 15),
-                      child: TextField(
-                        obscureText: true,
-                        decoration: InputDecoration(
-                            border: OutlineInputBorder(),
-                            labelText: 'Password',
-                            hintText: 'Enter secure password'),
-                      ),
+                      child: passwordField,
                     ),
                     Container(
                       height: 50,
@@ -196,29 +205,21 @@ class LoginScreenState extends State<LoginScreen> {
                       decoration: BoxDecoration(
                           color: const Color.fromARGB(255, 0, 255, 255),
                           borderRadius: BorderRadius.circular(20)),
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          foregroundColor: Colors.white,
-                          backgroundColor:
-                              const Color.fromARGB(255, 0, 255, 255),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(32.0),
-                          ),
-                        ),
-                        onPressed: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (_) => HomeScreen()));
-                        },
-                        child: const Text(
-                          'Login',
-                          style: TextStyle(color: Colors.white, fontSize: 25),
-                        ),
-                      ),
+                      child: loginAnonymousButton,
+                    ),
+                    const SizedBox(height: 15),
+                    Container(
+                      height: 50,
+                      width: 250,
+                      decoration: BoxDecoration(
+                          color: Theme.of(context).primaryColor,
+                          borderRadius: BorderRadius.circular(20)),
+                      child: loginEmailPasswordButton,
                     ),
                     const SizedBox(
                       height: 30,
                     ),
-                    const Text('New User? Create Account')
+                    textButton,
                   ],
                 ),
               ),
