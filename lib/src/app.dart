@@ -15,7 +15,7 @@ class App extends StatelessWidget {
         title: 'Askly',
         theme: ThemeData(
           primarySwatch: Colors.blue,
-          scaffoldBackgroundColor: Color.fromARGB(255, 0, 0, 0),
+          scaffoldBackgroundColor: Color.fromARGB(255, 255, 255, 255),
         ),
         home: SplashScreen(),
       ),

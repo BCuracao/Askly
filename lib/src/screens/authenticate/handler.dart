@@ -1,6 +1,8 @@
 import 'package:askly/src/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 
+import 'register.dart';
+
 class Handler extends StatefulWidget {
   @override
   _HandlerState createState() => _HandlerState();
@@ -18,8 +20,7 @@ class _HandlerState extends State<Handler> {
     if (showSignin) {
       return LoginScreen(toggleView: toggleView);
     } else {
-      //return Register(toggleView: toggleView);
-      return LoginScreen(toggleView: toggleView);
+      return Register(toggleView: toggleView);
     }
   }
 }

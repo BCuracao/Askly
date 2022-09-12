@@ -97,6 +97,7 @@ class LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
     */
+
     final loginAnonymousButton = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(30.0),

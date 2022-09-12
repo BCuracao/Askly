@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:askly/src/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 
+import '../wrapper.dart';
+
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);
 
@@ -16,7 +18,7 @@ class SplashScreen extends StatelessWidget {
         const Duration(milliseconds: 3000),
         () => Navigator.of(context)
                 .push(PageRouteBuilder(pageBuilder: (context, animation, _) {
-              return LoginScreen();
+              return Wrapper();
             })));
 
     return Scaffold(

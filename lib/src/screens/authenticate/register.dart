@@ -6,7 +6,7 @@ import '../../../models/loginuser.dart';
 class Register extends StatefulWidget {
   final Function? toggleView;
 
-  const Register({this.toggleView});
+  Register({this.toggleView});
 
   @override
   _RegisterState createState() => _RegisterState();
@@ -16,7 +16,6 @@ class _RegisterState extends State<Register> {
   final AuthService _auth = AuthService();
 
   bool _obscureText = true;
-
   final _email = TextEditingController();
   final _password = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
@@ -118,6 +117,7 @@ class _RegisterState extends State<Register> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Form(
+            autovalidateMode: AutovalidateMode.always,
             key: _formKey,
             child: Padding(
               padding: const EdgeInsets.all(16.0),
