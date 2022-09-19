@@ -125,15 +125,17 @@ class LoginScreenState extends State<LoginScreen> {
       ),
     );
 
-    final loginEmailPasswordButton = Material(
-      elevation: 5.0,
-      borderRadius: BorderRadius.circular(30.0),
-      color: Theme.of(context).primaryColor,
+    final loginEmailPasswordButton = Form(
+      key: _formKey,
+      //elevation: 5.0,
+      //borderRadius: BorderRadius.circular(30.0),
+      //color: Theme.of(context).primaryColor,
       child: MaterialButton(
         minWidth: MediaQuery.of(context).size.width,
         padding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         onPressed: () async {
           if (_formKey.currentState!.validate()) {
+            _formKey.currentState!.save();
             dynamic result = await _auth.signInEmailPassword(
               LoginUser(
                 email: _email.text,
